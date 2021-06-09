@@ -8,5 +8,20 @@
     <div style="margin-top: 3%; text-align:center; margin-bottom: 3%;">
         <a href="{% url 'attendance:register'%}" class="alert alert-light">Register a new student!</a>
     </div>
+    <div style="margin-top: 3%; text-align:center; margin-bottom: 3%;">
+        <a href="{% url 'attendance:take_attendance'%}" class="alert alert-light">Take Attendance!</a>
+    </div>
+    <h3>Present students</h3>
+    {% for student in students %}
+    {% if student.present %}
+    <li>{{student.fname}} <br> {{student.lname}} <br> {{student.rno}}</li>
+    {% endif %}
+    {% endfor %}
+    <h3>Absent students</h3>
+    {% for student in students %}
+    {% if not student.present %}
+    <li>{{student.fname}} <br> {{student.lname}} <br> {{student.rno}}</li>
+    {% endif %}
+    {% endfor %}
 </body>
 </html>
