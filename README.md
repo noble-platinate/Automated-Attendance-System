@@ -1,2 +1,3 @@
-# improved-octo-goggles
+# Automated attendance using Aruco Tags
+
 DIY PROJECT
